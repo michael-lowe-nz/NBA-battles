@@ -57,3 +57,23 @@ test('Reducer can add a players info to the state', t => {
   t.deepEqual(actual, expected, 'Reducer adds the new players info correctly')
   t.end()
 })
+
+test('Adding a second players info goes into the second player in the state correctly', t => {
+  const initialState = {
+    currentPage: '/index',
+    playerOne: {name: 'Stephen Curry', team: 'Golden State Warriors'},
+    playerTwo: null
+  }
+  freeze(initialState)
+  const expected = {
+    currentPage: '/index',
+    playerOne: {name: 'Stephen Curry', team: 'Golden State Warriors'},
+    playerTwo: {name: 'Lebron James', team: 'Cleveland Cavaliers'}
+  }
+  const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
+    name: 'Lebron James', team: 'Cleveland Cavaliers'
+  }}
+  )
+  t.deepEqual(actual, expected, 'Reducer adds the second players info correctly')
+  t.end()
+})

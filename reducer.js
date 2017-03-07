@@ -6,7 +6,8 @@ module.exports = (state, action) => {
       newState.currentPage = payload
       return newState
     case 'RECEIVE_PLAYER_INFO':
-      newState.playerOne = payload
+      if (!newState.playerOne) newState.playerOne = payload
+      else newState.playerTwo = payload
       return newState
     default:
       return newState
