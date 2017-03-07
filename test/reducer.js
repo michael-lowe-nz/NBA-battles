@@ -27,3 +27,33 @@ test('Reducer can change the currentPage in the state', t => {
   t.deepEqual(actual, expected, 'Reducer can change current page')
   t.end()
 })
+
+test('Reducer can add a players info to the state', t => {
+  const initialState = {
+    currentPage: '/index',
+    playerOne: null,
+    playerTwo: null
+  }
+  freeze(initialState)
+  const expected = {
+    currentPage : '/index',
+    playerOne : {
+      name: 'Stephen Curry',
+      team: 'Golden State Warriors',
+      ppg: 25.4,
+      apg: 6.1,
+      rpg: 2.3
+    },
+    playerTwo : null
+  }
+  const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
+    name: 'Stephen Curry',
+    team: 'Golden State Warriors',
+    ppg: 25.4,
+    apg: 6.1,
+    rpg: 2.3
+  }}
+  )
+  t.deepEqual(actual, expected, 'Reducer adds the new players info correctly')
+  t.end()
+})

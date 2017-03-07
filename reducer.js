@@ -4,6 +4,10 @@ module.exports = (state, action) => {
   switch (type) {
     case 'CHANGE_PAGE':
       newState.currentPage = payload
+      return newState
+    case 'RECEIVE_PLAYER_INFO':
+      newState.playerOne = payload
+      return newState
     default:
       return newState
   }
