@@ -7,6 +7,6 @@ module.exports = (dispatch) => {
     ppg: 21.9,
     apg: 3.5,
     rpg: 4.2,
-    image: "http://stats.nba.com/media/players/230x185/201939.png"
+    image: "http://stats.nba.com/media/players/230x185/202691.png"
   }})
 }
