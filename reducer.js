@@ -8,9 +8,9 @@ module.exports = (state, action) => {
     case 'RECEIVE_PLAYER_INFO':
       if (!newState.playerOne) newState.playerOne = payload
       else newState.playerTwo = payload
+      console.log(newState)
       return newState
     default:
       return newState
   }
-  return newState
 }
