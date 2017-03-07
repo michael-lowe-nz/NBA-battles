@@ -7,7 +7,7 @@ module.exports = (state, dispatch) => {
     return (
       <div className='player'>
       <h2>{state.state.playerOne.name}</h2>
-      <img src='{state.state.playerOne.image}'></img>
+      <img src={state.state.playerOne.image}></img>
       </div>
     )
   }
