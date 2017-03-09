@@ -1,26 +1,20 @@
 import React, { Component } from 'react'
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import getPlayer from '../api/getPlayer'
 import reducer from '../reducer'
+import Provider from 'react-redux'
 
 import Player from './Player'
+import Home from './Home'
 
-class App extends Component {
-
-  constructor (props) {
-    super(props)
-  }
-  render () {
+function App ({state}) {
     return (
-      <div>
-        <h1>Welcome to {this.props.state.name}</h1>
-        <button onClick={()=>{
-          getPlayer(this.props.dispatch)
-        }}>Add Klay!</button>
-        <Player state={this.props.state}/>
-      </div>
+      <Provider store={state} >
+        <Router history={hashHistory}>
+          <Route path='/' component={Home} />
+        </Router>
+      </Provider>
     )
-  }
-
 }
 
 export default App
