@@ -7,13 +7,12 @@ import Provider from 'react-redux'
 import Player from './Player'
 import Home from './Home'
 
-function App ({state}) {
+function App ( {state, dispatch} ) {
     return (
-      <Provider store={state} >
         <Router history={hashHistory}>
           <Route path='/' component={Home} />
+          <Route path='/player' component={Player}/>
         </Router>
-      </Provider>
     )
 }
 

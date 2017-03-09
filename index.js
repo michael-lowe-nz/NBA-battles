@@ -1,9 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './components/app'
 import { createStore } from 'redux'
 import reducer from './reducer'
 import { Provider } from 'react-redux'
+import App from './components/app'
+
 
 var initialState = {
   name: 'NBA Battle',
@@ -13,15 +14,10 @@ var initialState = {
 }
 
 const store = createStore(reducer, initialState)
-const { subscribe } = store
+const { subscribe, dispatch, getState } = store
 
 subscribe(() => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.querySelector('main')
-  )
+  render(<App state={getState()} dispatch={dispatch}/> , document.querySelector('main'))
 })
 
 dispatch({type: 'INIT'})
