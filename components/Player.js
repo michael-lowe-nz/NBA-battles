@@ -1,9 +1,13 @@
 import React from 'react'
 
-import getPlayer from '../api/getPlayer'
-
-module.exports = () => {
-  console.log('This is the state:', context.store)
-  getPlayer(store.dispatch)
-  return <h1>Player Component</h1>
+module.exports = ({playerInfo, dispatch}) => {
+  if (playerInfo) {
+    return (
+      <div className="player">
+        <h1>{playerInfo.name}</h1>
+        <img src={playerInfo.image}></img>
+      </div>
+    )
+  }
+  return <p>Add a player</p>
 }

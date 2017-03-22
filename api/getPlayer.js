@@ -1,6 +1,6 @@
 //http://stats.nba.com/media/players/230x185/201939.png
 
-module.exports = (dispatch) => {
+module.exports = (state, dispatch) => {
   dispatch({type: 'RECEIVE_PLAYER_INFO', payload: {
     name: "Klay Thompson",
     team: "Golden State Warriors",
