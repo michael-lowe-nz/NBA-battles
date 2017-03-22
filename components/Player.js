@@ -1,17 +1,12 @@
 import React from 'react'
 
-module.exports = (state, dispatch) => {
-  console.log('State as received by Player',state.state)
-  if (state.state.playerOne) {
-    console.log('There is something in the state')
+module.exports = ({playerInfo, dispatch}) => {
+  if (playerInfo) {
     return (
-      <div className='player'>
-      <h2>{state.state.playerOne.name}</h2>
-      <img src={state.state.playerOne.image}></img>
+      <div className="player">
+        <h1>{playerInfo.fullName}</h1>
+        <img src={"http://stats.nba.com/media/players/230x185/"+ playerInfo.playerId +".png"}></img>
       </div>
     )
-  }
-  else {
-    return <p>Select a player</p>
   }
 }
