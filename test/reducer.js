@@ -77,3 +77,20 @@ test('Adding a second players info goes into the second player in the state corr
   t.deepEqual(actual, expected, 'Reducer adds the second players info correctly')
   t.end()
 })
+
+test('handleNameChange can update the form.name in the state correctly', t => {
+  const initialState = {
+    form: {
+      name: null
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kevin Durant"
+    }
+  }
+  const actual = reducer(initialState, {type: 'HANDLE_FORM_NAME_CHANGE', payload: "Kevin Durant"})
+  t.deepEqual(actual, expected, 'Reducer adds Kevin Durant to state.form.name in the state')
+  t.end()
+})

@@ -10,14 +10,17 @@ var initialState = {
   name: 'NBA Battle',
   currentPage: 'index',
   playerOne: null,
-  playerTwo: null
+  playerTwo: null,
+  form: {
+    name: null
+  }
 }
 
 const store = createStore(reducer, initialState)
 const { subscribe, dispatch, getState } = store
 
 subscribe(() => {
-  render(<App />,document.querySelector('main'))
+  render(<App dispatch={dispatch} state={store.getState()} />,document.querySelector('main'))
 })
 
 dispatch({type: 'INIT'})

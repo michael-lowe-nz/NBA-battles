@@ -7,9 +7,9 @@ import { Provider } from 'react-redux'
 import Home from './Home'
 import Main from './Main'
 
-function App () {
+function App ({state, dispatch}) {
     return (
-      <Home />
+      <Home state={state} dispatch={dispatch}/>
     )
 }
 
