@@ -6,8 +6,7 @@ module.exports = (state, action) => {
       newState.currentPage = payload
       return newState
     case 'RECEIVE_PLAYER_INFO':
-      if (!newState.playerOne) newState.playerOne = payload
-      else newState.playerTwo = payload
+      newState.players.push(payload)
       return newState
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload

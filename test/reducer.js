@@ -31,20 +31,18 @@ test('Reducer can change the currentPage in the state', t => {
 test('Reducer can add a players info to the state', t => {
   const initialState = {
     currentPage: '/index',
-    playerOne: null,
-    playerTwo: null
+    players: []
   }
   freeze(initialState)
   const expected = {
     currentPage : '/index',
-    playerOne : {
+    players : [{
       name: 'Stephen Curry',
       team: 'Golden State Warriors',
       ppg: 25.4,
       apg: 6.1,
       rpg: 2.3
-    },
-    playerTwo : null
+    }]
   }
   const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
     name: 'Stephen Curry',
@@ -61,14 +59,14 @@ test('Reducer can add a players info to the state', t => {
 test('Adding a second players info goes into the second player in the state correctly', t => {
   const initialState = {
     currentPage: '/index',
-    playerOne: {name: 'Stephen Curry', team: 'Golden State Warriors'},
-    playerTwo: null
+    players: [{name: 'Stephen Curry', team: 'Golden State Warriors'}]
   }
   freeze(initialState)
   const expected = {
     currentPage: '/index',
-    playerOne: {name: 'Stephen Curry', team: 'Golden State Warriors'},
-    playerTwo: {name: 'Lebron James', team: 'Cleveland Cavaliers'}
+    players: [
+      {name: 'Stephen Curry', team: 'Golden State Warriors'},
+      {name: 'Lebron James', team: 'Cleveland Cavaliers'}]
   }
   const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
     name: 'Lebron James', team: 'Cleveland Cavaliers'
