@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/michael-lowe-nz/NBA-battles",
   "dependencies": {
+    "nba": "^3.2.6",
     "redux": "^3.6.0"
   },
   "devDependencies": {
