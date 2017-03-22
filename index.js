@@ -9,8 +9,7 @@ import reducer from './reducer'
 var initialState = {
   name: 'NBA Battle',
   currentPage: 'index',
-  playerOne: null,
-  playerTwo: null,
+  players: [],
   form: {
     name: null
   }

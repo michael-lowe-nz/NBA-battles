@@ -3,13 +3,14 @@ import React from 'react'
 import Player from './Player'
 
 module.exports = ({state, dispatch}) => {
-  if (state.playerOne) {
+  if (state.players.length > 0) {
     return (
       <div className="players">
-        <Player playerInfo={state.playerOne} dispatch={dispatch}/>
-        <Player playerInfo={state.playerTwo} dispatch={dispatch}/>
+        {state.players.map(function (player) {
+          return (<Player playerInfo={player} key={player.playerID}/>)
+        })}
       </div>
     )
   }
-  return <p>No player selected</p>
+  return <p>No players selected</p>
 }
