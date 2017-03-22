@@ -113,3 +113,28 @@ test('Change_PLayer_loading can change the loading property correctly', t => {
   t.deepEqual(actual, expected, 'Reducer changes Kevin Durants loading to true in the state')
   t.end()
 })
+
+test('ADD_SUGGESTIONS can put suggestions for autocomplete in the state.forms.suggestions', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: []
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: [
+        {fullName: "Kevin Durant"},
+        {fullName: "Kevin Martin"}
+      ]
+    }
+  }
+  const actual = reducer(initialState, {type: "ADD_SUGGESTIONS", payload: [
+    {fullName: "Kevin Durant"},
+    {fullName: "Kevin Martin"}
+  ]})
+  t.deepEqual(actual, expected, 'ADD_SUGGESTIONS correctly puts the array in the state')
+  t.end()
+})

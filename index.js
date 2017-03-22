@@ -11,7 +11,13 @@ var initialState = {
   currentPage: 'index',
   players: [],
   form: {
-    name: null
+    name: null,
+    suggestions: [
+      {fullName: "Lebron James"},
+      {fullName: "Stephen Curry"},
+      {fullName: "James Harden"},
+      {fullName: "Russell Westbrook"}
+    ]
   }
 }
 

@@ -14,6 +14,9 @@ module.exports = (state, action) => {
     case 'CHANGE_PLAYER_LOADING':
       newState.isLoading = payload
       return newState
+    case 'ADD_SUGGESTIONS':
+      newState.form.suggestions = payload
+      return newState
     default:
       return newState
   }
