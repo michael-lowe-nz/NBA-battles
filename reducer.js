@@ -11,6 +11,9 @@ module.exports = (state, action) => {
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload
       return newState
+    case 'CHANGE_PLAYER_LOADING':
+      newState.isLoading = payload
+      return newState
     default:
       return newState
   }
