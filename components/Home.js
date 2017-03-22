@@ -54,15 +54,7 @@ module.exports = ({state, dispatch}) => {
         <h1>Compare Players</h1>
         <form>
           <label>Player Name: </label>
-          <Autosuggest
-            suggestions={state.form.suggestions}
-            getSuggestionValue={getSuggestionValue}
-            renderSuggestion={renderSuggestion}
-            onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={onSuggestionsClearRequested}
-            inputProps={inputProps}
-          />
-          <input type="text" name="playerName" placeholder="name" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
+          <input type="text" name="playerName" placeholder="name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
           <input className="submit" type="submit" value="ADD PLAYER" onClick={addPlayer} ></input>
         </form>
       </div>
@@ -77,3 +69,12 @@ const suggestedPlayers = [
   {name: "Stephen Curry"},
   {name: "Kyrie Irving"}
 ]
+
+// <Autosuggest
+//   suggestions={state.form.suggestions}
+//   getSuggestionValue={getSuggestionValue}
+//   renderSuggestion={renderSuggestion}
+//   onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+//   onSuggestionsClearRequested={onSuggestionsClearRequested}
+//   inputProps={inputProps}
+// />
