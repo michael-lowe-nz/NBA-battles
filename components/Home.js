@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Player from './Player'
+
 module.exports = (state, dispatch) => {
   return (
     <div>
