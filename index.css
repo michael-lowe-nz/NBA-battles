@@ -3,7 +3,18 @@ main {
 }
 
 body {
-  font-family: "Helvetica";
-  background-color: #ff9100;
-  color: white;
+  font-family: 'Contrail One', "Helvetica";
+  background-color: #00BCD4;
+
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.player {
+  margin: 0 50px;
 }
