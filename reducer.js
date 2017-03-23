@@ -17,6 +17,12 @@ module.exports = (state, action) => {
     case 'ADD_SUGGESTIONS':
       newState.form.suggestions = payload
       return newState
+    case 'REMOVE_PLAYER':
+      newState.players.splice(payload, 1)
+      return newState
+    case 'CLEAR_PLAYERS':
+      newState.players = []
+      return newState
     default:
       return newState
   }

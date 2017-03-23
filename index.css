@@ -3,8 +3,26 @@ main {
 }
 
 body {
-  font-family: 'Contrail One', "Helvetica";
+  font-family: "Helvetica Neue";
+  font-weight: 200;
   margin: 0;
+  background-color: #eee;
+}
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+.search {
+  color: black;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.header {
+  border-bottom: solid 3px #ED174C;
+  padding: 40px 0;
+  color: white;
 }
 
 .players {
@@ -15,23 +33,25 @@ body {
 }
 
 .player {
-  margin: 10px 50px;
+  margin: 20px 50px;
   padding: 5px 20px;
-  border: solid 1px #00BCD4;
+  border: solid 3px #006BB6;
   border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+
+.player:hover {
+  background-color: #eee;
 }
 
 .stats {
-  border: solid 1px #00BCD4;
+  border: solid 3px #006BB6;
   margin: 10px 0;
   border-radius: 10px;
+  background-color: white;
 }
 
-.header {
-  background-color: #00BCD4;
-  padding: 40px 0;
-  color: white;
-}
 
 img {
   display: block;
@@ -47,4 +67,34 @@ img {
 
 .spinner {
   margin-top: 20vh;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: 300ms;
+}
+
+.example-leave {
+  opacity: 1;
+  width: 100px;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  width: 0px;
+  transition: 700ms;
+}
+
+.remove-button {
+  position: absolute;
+  left: -25px;
+  top: -25px;
+}
+
+#remove {
+  height: 20px;
 }

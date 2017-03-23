@@ -12,12 +12,17 @@ module.exports = ({state, dispatch}) => {
     getPlayer(state, dispatch)
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
   }
+  function clearPlayers (e) {
+    e.preventDefault()
+    dispatch({type: 'CLEAR_PLAYERS'})
+  }
   return (
     <div className="search">
       <form>
         <label>Player Name: </label>
         <input type="text" name="playerName" placeholder="name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
         <input className="submit" type="submit" value="ADD PLAYER" onClick={addPlayer} ></input>
+        <input className="submit" type="submit" value="CLEAR" onClick={clearPlayers} ></input>
       </form>
     </div>
   )

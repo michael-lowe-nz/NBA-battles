@@ -4,6 +4,7 @@ import NBA from 'nba'
 import Player from './Player'
 import Players from './Players'
 import Search from './Search'
+import Logo from '../svg/logo'
 
 import getPlayer from '../api/getPlayer'
 
@@ -15,20 +16,19 @@ module.exports = ({state, dispatch}) => {
   return (
     <div className="app">
       <div className="header">
-        <h1>Compare Players</h1>
+        <Logo />
       </div>
       <Search state={state} dispatch={dispatch}/>
-      <div className="players">
-        {state.isLoading ? <MDSpinner size={80} className="spinner" /> : <Players state={state} dispatch={dispatch}/>}
-      </div>
+      {state.isLoading ? <MDSpinner size={80} className="spinner" /> : <Players state={state} dispatch={dispatch}/>}
     </div>
   )
 }
 
-const suggestedPlayers = [
-  {name: "Stephen Curry"},
-  {name: "Kyrie Irving"}
-]
+// const suggestedPlayers = [
+//   {name: "Stephen Curry"},
+//   {name: "Kyrie Irving"}
+// ]
+
 
 // <Autosuggest
 //   suggestions={state.form.suggestions}

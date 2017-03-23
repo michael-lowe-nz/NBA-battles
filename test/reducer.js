@@ -138,3 +138,37 @@ test('ADD_SUGGESTIONS can put suggestions for autocomplete in the state.forms.su
   t.deepEqual(actual, expected, 'ADD_SUGGESTIONS correctly puts the array in the state')
   t.end()
 })
+
+test('REMOVE_PLAYER can succesfully remove players by index from the players array in the state', t => {
+  const initialState = {
+    players : [
+      {fullName: "Kevin Durant"},
+      {fullName: "Russell Westbrook"}
+    ]
+  }
+  freeze(initialState)
+  const expected = {
+    players : [
+      {fullName: "Kevin Durant"}
+    ]
+  }
+  const actual = reducer(initialState, {type: 'REMOVE_PLAYER', payload: 1})
+  t.deepEqual(actual, expected, "Player at index 1 has been succesfully removed from the state")
+  t.end()
+})
+
+test('CLEAR_PLAYERS can clear all the players in the players array', t => {
+  const initialState = {
+    players: [
+      {fullName: "Kevin Durant"},
+      {fullName: "Kobe Bryant"}
+    ]
+  }
+  freeze(initialState)
+  const expected = {
+    players: []
+  }
+  const actual = reducer(initialState, {type: 'CLEAR_PLAYERS'})
+  t.deepEqual(actual, expected, 'CLEAR_PLAYERS has left an empty array in state.players')
+  t.end()
+})
