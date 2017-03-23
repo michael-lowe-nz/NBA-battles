@@ -19,10 +19,9 @@ module.exports = ({state, dispatch}) => {
   return (
     <div className="search">
       <form>
-        <label>Player Name: </label>
-        <input type="text" name="playerName" placeholder="name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
-        <input className="submit" type="submit" value="ADD PLAYER" onClick={addPlayer} ></input>
-        <input className="submit" type="submit" value="CLEAR" onClick={clearPlayers} ></input>
+        <input type="text" className="formElement" name="playerName" placeholder="Player Name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
+        <input className="formElement button" type="submit" value="ADD PLAYER" onClick={addPlayer} ></input>
+        <input className="formElement button" type="submit" value="CLEAR" onClick={clearPlayers} ></input>
       </form>
     </div>
   )

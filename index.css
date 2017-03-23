@@ -21,7 +21,7 @@ h1, h2, h3 {
 
 .header {
   border-bottom: solid 3px #ED174C;
-  padding: 40px 0;
+  padding: 20px 0;
   color: white;
 }
 
@@ -58,11 +58,16 @@ img {
   margin: 0 auto;
 }
 
-.submit {
-  background-color: none;
-  border: solid 1px white;
+.formElement {
+  border: solid 3px white;
   border-radius: 99em;
-  padding: 0 10px;
+  padding: 5px 20px;
+  font-size: 1.2em;
+  margin: 0 10px;
+}
+
+.button {
+  color: white;
 }
 
 .spinner {
@@ -75,17 +80,15 @@ img {
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: 300ms;
+  transition: 700ms;
 }
 
 .example-leave {
   opacity: 1;
-  width: 100px;
 }
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  width: 0px;
   transition: 700ms;
 }
 
@@ -93,6 +96,10 @@ img {
   position: absolute;
   left: -25px;
   top: -25px;
+}
+
+.remove-button:hover .delete {
+  stroke: red;
 }
 
 #remove {
