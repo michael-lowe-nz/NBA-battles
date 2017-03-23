@@ -23,18 +23,3 @@ module.exports = ({state, dispatch}) => {
     </div>
   )
 }
-
-// const suggestedPlayers = [
-//   {name: "Stephen Curry"},
-//   {name: "Kyrie Irving"}
-// ]
-
-
-// <Autosuggest
-//   suggestions={state.form.suggestions}
-//   getSuggestionValue={getSuggestionValue}
-//   renderSuggestion={renderSuggestion}
-//   onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-//   onSuggestionsClearRequested={onSuggestionsClearRequested}
-//   inputProps={inputProps}
-// />

@@ -70,6 +70,10 @@ img {
   color: white;
 }
 
+.button:hover {
+  background-color: #006BB6;
+}
+
 .spinner {
   margin-top: 20vh;
 }

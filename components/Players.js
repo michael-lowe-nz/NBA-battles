@@ -15,5 +15,5 @@ module.exports = ({state, dispatch}) => {
       </div>
     )
   }
-  return <p>No players selected</p>
+  return <div></div>
 }
