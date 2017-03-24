@@ -16,6 +16,7 @@ module.exports = (state, action) => {
       return newState
     case 'ADD_SUGGESTIONS':
       newState.form.suggestions = payload
+      console.log("New state", newState.form)
       return newState
     case 'REMOVE_PLAYER':
       newState.players.splice(payload, 1)

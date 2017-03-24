@@ -113,3 +113,14 @@ img {
 #remove {
   height: 20px;
 }
+
+.suggestions {
+  display: flex;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.suggestion {
+  border: solid 1px blue;
+  padding: 5px 15px;
+}

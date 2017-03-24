@@ -12,12 +12,7 @@ var initialState = {
   players: [],
   form: {
     name: null,
-    suggestions: [
-      {fullName: "Lebron James"},
-      {fullName: "Stephen Curry"},
-      {fullName: "James Harden"},
-      {fullName: "Russell Westbrook"}
-    ]
+    suggestions: []
   }
 }
 
