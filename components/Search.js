@@ -14,15 +14,17 @@ module.exports = ({state, dispatch}) => {
     e.preventDefault()
     getPlayer(state, dispatch)
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
+    dispatch({type: 'CLEAR_SUGGESTIONS'})
   }
   function clearPlayers (e) {
     e.preventDefault()
     dispatch({type: 'CLEAR_PLAYERS'})
+    dispatch({type: 'CLEAR_SUGGESTIONS'})
   }
   return (
     <div className="search">
       <form>
-        <input type="text" autoFocus className="formElement" name="playerName" placeholder="Player Name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
+        <input type="text" autoFocus className="formElement searchInput" name="playerName" placeholder="Player Name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
         <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>
         <input className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers} ></input>
       </form>
