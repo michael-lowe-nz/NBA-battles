@@ -23,8 +23,8 @@ module.exports = ({state, dispatch}) => {
     <div className="search">
       <form>
         <input type="text" autoFocus className="formElement" name="playerName" placeholder="Player Name" autoComplete="off" value={ state.form.name ? state.form.name : ""} onChange={handleNameChange}></input>
-        <input className="formElement button" type="submit" value="ADD PLAYER" onClick={addPlayer} ></input>
-        <input className="formElement button" type="submit" value="CLEAR" onClick={clearPlayers} ></input>
+        <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>
+        <input className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers} ></input>
       </form>
     </div>
   )

@@ -8,7 +8,7 @@ module.exports = ({state, dispatch}) => {
     <div className='suggestions'>
       {state.form.suggestions.map((suggestion, index) => {
         return (
-          <div className="suggestion" key={index}>
+          <div className="suggestion formElement clickable" key={index}>
             <p>{suggestion.fullName}</p>
           </div>
         )

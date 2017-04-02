@@ -21,7 +21,10 @@ module.exports = ({state, dispatch}) => {
       </div>
       <Search state={state} dispatch={dispatch}/>
       <Suggestions state={state} dispatch={dispatch}/>
-      {state.isLoading ? <MDSpinner size={80} className="spinner" /> : <Players state={state} dispatch={dispatch}/>}
+      {state.isLoading ?
+        <MDSpinner size={80} className="spinner" />
+        :
+        <Players state={state} dispatch={dispatch}/>}
     </div>
   )
 }
