@@ -139,6 +139,29 @@ test('ADD_SUGGESTIONS can put suggestions for autocomplete in the state.forms.su
   t.end()
 })
 
+test('CLEAR_SUGGESTIONS can clear the suggestions in the state', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: [
+        {fullName: "Kevin Durant"},
+        {fullName: "Kevin Martin"}
+      ]
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: []
+    }
+  }
+  const actual = reducer(initialState, {type: "CLEAR_SUGGESTIONS"})
+  t.deepEqual(actual, expected, 'CLEAR_SUGGESTIONS correctly clears suggestions array in the state')
+  t.end()
+})
+
+
 test('REMOVE_PLAYER can succesfully remove players by index from the players array in the state', t => {
   const initialState = {
     players : [

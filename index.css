@@ -15,6 +15,10 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+input {
+  outline: none;
+}
+
 /** HEADER **/
 .header {
   /*border-bottom: solid 1px #ED174C;*/
@@ -30,12 +34,11 @@ h1, h2, h3 {
 /** SEARCH **/
 
 .search {
-  color: black;
+  color: #006BB6;
   padding: 20px 0;
 }
 
-input:focus {
-  outline: none;
+.searchInput:focus {
   border: solid 1px #006BB6;
 }
 
@@ -43,7 +46,6 @@ input:focus {
   border: solid 1px white;
   border-radius: 99em;
   padding: 5px 20px;
-  font-size: 1em;
   margin: 0 10px;
 }
 
@@ -127,12 +129,17 @@ img {
 }
 
 .suggestion {
-  /*border: solid 1px blue;*/
+  margin-bottom: 2px;
+  font-size: 1em;
+}
+
+.suggestion:hover {
+  color: #006BB6;
+  border-color: #006BB6;
+  background-color: white;
 }
 
 .suggestion p {
   margin: 0 5px;
   padding: 0;
-  border: solid 1px white;
-  border-radius: 99em;
 }
