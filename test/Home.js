@@ -25,8 +25,9 @@ test('Base test for Home.js should pass', t => {
 })
 
 test('React Components Test: Home.js', t => {
-  const component = createComponent.shallow(<Home />)
-  t.true(component.props.state)
-  t.true(component.props.dispatch)
+  const component = createComponent.shallow(<Home state={testState} test={"michael"}/>)
+  t.equal(component.props.className, "app", "Classname is App on the Home component")
+  t.deepEquals(component.props.state, testState, "The state is the same as the one fed in")
+  t.equal(component.test, "michael", "testing to see if props are accessible")
   t.end()
 })

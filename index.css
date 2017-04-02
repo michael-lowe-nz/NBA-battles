@@ -21,12 +21,12 @@ h1, h2, h3 {
 
 input:focus {
   outline: none;
-  border: solid 3px #006BB6;
+  border: solid 1px #006BB6;
 }
 
 
 .header {
-  border-bottom: solid 3px #ED174C;
+  border-bottom: solid 1px #ED174C;
   background-color: silver;
   padding: 20px 0;
   color: white;
@@ -42,14 +42,14 @@ input:focus {
 .player {
   margin: 20px 50px;
   padding: 5px 20px;
-  border: solid 3px #006BB6;
+  border: solid 1px #006BB6;
   border-radius: 10px;
   background-color: white;
   position: relative;
 }
 
 .stats {
-  border: solid 3px #006BB6;
+  border: solid 1px #006BB6;
   margin: 10px 0;
   border-radius: 10px;
   background-color: white;
@@ -62,7 +62,7 @@ img {
 }
 
 .formElement {
-  border: solid 3px white;
+  border: solid 1px white;
   border-radius: 99em;
   padding: 5px 20px;
   font-size: 1.2em;
