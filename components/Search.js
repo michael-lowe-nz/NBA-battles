@@ -12,7 +12,7 @@ module.exports = ({state, dispatch}) => {
   }
   function addPlayer (e) {
     e.preventDefault()
-    getPlayer(state, dispatch)
+    getPlayer(state.form.name, dispatch)
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
     dispatch({type: 'CLEAR_SUGGESTIONS'})
   }

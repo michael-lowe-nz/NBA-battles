@@ -20,6 +20,12 @@ module.exports = (state, action) => {
     case 'CLEAR_SUGGESTIONS':
       newState.form.suggestions = []
       return newState
+    case 'HANDLE_CLICK_SUGGESTION':
+      newState.form.clickedSuggestion = payload
+      return newState
+    case 'CLEAR_CLICK_SUGGESTION':
+      newState.form.clickedSuggestion = null
+      return newState
     case 'REMOVE_PLAYER':
       newState.players.splice(payload, 1)
       return newState

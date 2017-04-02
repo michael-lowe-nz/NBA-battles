@@ -12,7 +12,8 @@ var initialState = {
   players: [],
   form: {
     name: null,
-    suggestions: []
+    suggestions: [],
+    clickedSuggestion: null
   }
 }
 

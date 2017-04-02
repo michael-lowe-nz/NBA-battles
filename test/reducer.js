@@ -161,6 +161,48 @@ test('CLEAR_SUGGESTIONS can clear the suggestions in the state', t => {
   t.end()
 })
 
+test('HANDLE_SUGGESTION_CLICK can put the player clicked in state.form.clickedSuggestion', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: null
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: "Kevin Durant"
+    }
+  }
+  const actual = reducer(initialState, {type: "HANDLE_CLICK_SUGGESTION", payload: "Kevin Durant"})
+  t.deepEqual(actual, expected, 'HANDLE_CLICK_SUGGESTION can put Kevin Durant in the clickedSuggestion in the state')
+  t.end()
+})
+
+test('CLEAR_SUGGESTION_CLICK clear the suggestionclicked field in state', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: "Kevin Durant"
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: null
+    }
+  }
+  const actual = reducer(initialState, {type: "CLEAR_CLICK_SUGGESTION"})
+  t.deepEqual(actual, expected, 'CLEAR_CLICK_SUGGESTION can remove the contents of the field')
+  t.end()
+})
+
 
 test('REMOVE_PLAYER can succesfully remove players by index from the players array in the state', t => {
   const initialState = {
