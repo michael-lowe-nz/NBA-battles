@@ -2,7 +2,6 @@ import NBA from 'nba'
 
 module.exports = (playerName, dispatch) => {
   const playerToAdd = NBA.findPlayer(playerName)
-  console.log("Player to add:", playerToAdd);
   if(playerToAdd) {
     dispatch({type: "CHANGE_PLAYER_LOADING", payload: true})
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
