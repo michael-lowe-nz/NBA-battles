@@ -93,7 +93,7 @@ test('handleNameChange can update the form.name in the state correctly', t => {
   t.end()
 })
 
-test('Change_PLayer_loading can change the loading property correctly', t => {
+test('TOGGLE_PLAYER_LOADING can change the loading property correctly', t => {
   const initialState = {
     form: {
       name: null
@@ -109,8 +109,8 @@ test('Change_PLayer_loading can change the loading property correctly', t => {
     players : [],
     isLoading: true
   }
-  const actual = reducer(initialState, {type: 'CHANGE_PLAYER_LOADING', payload: true})
-  t.deepEqual(actual, expected, 'Reducer changes Kevin Durants loading to true in the state')
+  const actual = reducer(initialState, {type: 'TOGGLE_PLAYER_LOADING'})
+  t.deepEqual(actual, expected, 'Reducer toggles player loading value correctly')
   t.end()
 })
 
