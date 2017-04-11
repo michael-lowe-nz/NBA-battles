@@ -4,6 +4,9 @@ import NBA from 'nba'
 import getPlayer from '../api/getPlayer'
 
 module.exports = ({state, dispatch}) => {
+  function shouldComponentUpdate(nextProps, nextState) {
+    
+  }
   function handleNameChange (e) {
     e.preventDefault()
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: e.target.value})
