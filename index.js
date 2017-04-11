@@ -12,7 +12,7 @@ var initialState = {
   players: [],
   form: {
     name: null,
-    suggestions: []
+    suggestions: [],
   }
 }
 
@@ -20,7 +20,7 @@ const store = createStore(reducer, initialState)
 const { subscribe, dispatch, getState } = store
 
 subscribe(() => {
-  render(<App dispatch={dispatch} state={store.getState()} />,document.querySelector('main'))
+  render(<App dispatch={dispatch} state={store.getState()} />, document.querySelector('main'))
 })
 
 dispatch({type: 'INIT'})

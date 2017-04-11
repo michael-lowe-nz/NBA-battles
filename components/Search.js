@@ -7,12 +7,13 @@ module.exports = ({state, dispatch}) => {
   function handleNameChange (e) {
     e.preventDefault()
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: e.target.value})
-    const suggestions = NBA.searchPlayers(state.form.name)
+    const suggestions = state.form.name ? NBA.searchPlayers(state.form.name) : null
     dispatch({type: 'ADD_SUGGESTIONS', payload: suggestions})
+    console.log(state.form.name)
   }
   function addPlayer (e) {
     e.preventDefault()
-    getPlayer(state, dispatch)
+    getPlayer(state.form.name, dispatch)
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
     dispatch({type: 'CLEAR_SUGGESTIONS'})
   }

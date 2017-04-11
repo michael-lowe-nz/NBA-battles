@@ -6,7 +6,7 @@ import addAssertions from 'extend-tape'
 import jsxEquals from 'tape-jsx-equals'
 const test = addAssertions(tape, {jsxEquals})
 
-import Home from '../components/Home'
+import Header from '../components/Header'
 
 const testState = {
   name: 'NBA Battle',
@@ -25,7 +25,7 @@ test('Base test for Home.js should pass', t => {
 })
 
 test('React Components Test: Home.js', t => {
-  const component = createComponent.shallow(<Home state={testState} test={"michael"}/>)
-  t.equal(component.props.className, "app", "Classname is App on the Home component")
+  const component = createComponent.shallow(<Header state={testState} test={"michael"}/>)
+  t.equal(component.props.className, "header", "Classname is App on the Home component")
   t.end()
 })

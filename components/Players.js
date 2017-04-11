@@ -15,5 +15,5 @@ module.exports = ({state, dispatch}) => {
       </div>
     )
   }
-  return <div></div>
+  return null
 }

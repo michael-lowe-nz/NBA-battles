@@ -1,20 +1,18 @@
-//http://stats.nba.com/media/players/230x185/201939.png
 import NBA from 'nba'
-import request from 'superagent'
 
-module.exports = (state, dispatch) => {
-  if (state.form.name) {
-    const playerToAdd = NBA.findPlayer(state.form.name)
-    if(playerToAdd) {
-      dispatch({type: "CHANGE_PLAYER_LOADING", payload: true})
-      NBA.stats.playerInfo({ PlayerID: playerToAdd.playerId})
+module.exports = (playerName, dispatch) => {
+  const playerToAdd = NBA.findPlayer(playerName)
+  if(playerToAdd) {
+    dispatch({type: "TOGGLE_PLAYER_LOADING"})
+    dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
+    dispatch({type: 'CLEAR_SUGGESTIONS'})
+    NBA.stats.playerInfo({ PlayerID: playerToAdd.playerId})
       .then(function (response) {
         dispatch({type: 'RECEIVE_PLAYER_INFO', payload: response.playerHeadlineStats[0]})
-        dispatch({type: "CHANGE_PLAYER_LOADING", payload: false})
+        dispatch({type: "TOGGLE_PLAYER_LOADING"})
       })
       .catch(function (error) {
         console.log('Error:', error)
       })
-    }
   }
 }

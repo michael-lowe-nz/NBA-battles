@@ -93,7 +93,7 @@ test('handleNameChange can update the form.name in the state correctly', t => {
   t.end()
 })
 
-test('Change_PLayer_loading can change the loading property correctly', t => {
+test('TOGGLE_PLAYER_LOADING can change the loading property correctly', t => {
   const initialState = {
     form: {
       name: null
@@ -109,8 +109,8 @@ test('Change_PLayer_loading can change the loading property correctly', t => {
     players : [],
     isLoading: true
   }
-  const actual = reducer(initialState, {type: 'CHANGE_PLAYER_LOADING', payload: true})
-  t.deepEqual(actual, expected, 'Reducer changes Kevin Durants loading to true in the state')
+  const actual = reducer(initialState, {type: 'TOGGLE_PLAYER_LOADING'})
+  t.deepEqual(actual, expected, 'Reducer toggles player loading value correctly')
   t.end()
 })
 
@@ -158,6 +158,48 @@ test('CLEAR_SUGGESTIONS can clear the suggestions in the state', t => {
   }
   const actual = reducer(initialState, {type: "CLEAR_SUGGESTIONS"})
   t.deepEqual(actual, expected, 'CLEAR_SUGGESTIONS correctly clears suggestions array in the state')
+  t.end()
+})
+
+test('HANDLE_SUGGESTION_CLICK can put the player clicked in state.form.clickedSuggestion', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: null
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: "Kevin Durant"
+    }
+  }
+  const actual = reducer(initialState, {type: "HANDLE_CLICK_SUGGESTION", payload: "Kevin Durant"})
+  t.deepEqual(actual, expected, 'HANDLE_CLICK_SUGGESTION can put Kevin Durant in the clickedSuggestion in the state')
+  t.end()
+})
+
+test('CLEAR_SUGGESTION_CLICK clear the suggestionclicked field in state', t => {
+  const initialState = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: "Kevin Durant"
+    }
+  }
+  freeze(initialState)
+  const expected = {
+    form: {
+      name: "Kev",
+      suggestions: [],
+      clickedSuggestion: null
+    }
+  }
+  const actual = reducer(initialState, {type: "CLEAR_CLICK_SUGGESTION"})
+  t.deepEqual(actual, expected, 'CLEAR_CLICK_SUGGESTION can remove the contents of the field')
   t.end()
 })
 

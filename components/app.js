@@ -1,16 +1,26 @@
-import React, { Component } from 'react'
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+import React from 'react'
+
+import Header from './Header'
+import Players from './Players'
+import Search from './Search'
+import Logo from '../svg/logo'
+import Suggestions from './Suggestions'
+
 import getPlayer from '../api/getPlayer'
-import reducer from '../reducer'
-import { Provider } from 'react-redux'
 
-import Home from './Home'
-import Main from './Main'
+import MDSpinner from "react-md-spinner"
 
-function App ({state, dispatch}) {
-    return (
-      <Home state={state} dispatch={dispatch}/>
-    )
+
+module.exports = ({state, dispatch}) => {
+  return (
+    <div className="app">
+      <Header />
+      <Search state={state} dispatch={dispatch}/>
+      <Suggestions state={state} dispatch={dispatch}/>
+      {state.isLoading ?
+        <MDSpinner size={80} className="spinner" />
+        :
+        <Players state={state} dispatch={dispatch}/>}
+    </div>
+  )
 }
-
-export default App

@@ -4,7 +4,7 @@ module.exports = () =>
     <svg id="Layer_1" x="0px" y="0px"
     width="220px" height="220.5px">
       <circle fill="#FFFFFF" stroke="#000000" strokeWidth="3" strokeMiterlimit="10" cx="110" cy="110.25" r="93.982"/>
-      <line fill="none" stroke="#000000" strokeWidth="3" strokeMiterlimit="10" x1="22.097" y1="143.572" x2="197.903" y2="143.547"/>
+      <line fill="none" stroke="#000000" strokeWidth="3" strokeMiterlimit="10"/>
       <g>
       <path d="M69.178,166.379c-0.062-0.477-0.223-0.906-0.481-1.289c-0.376-0.516-0.959-0.773-1.75-0.773
       c-1.128,0-1.899,0.559-2.314,1.676c-0.22,0.592-0.329,1.379-0.329,2.361c0,0.936,0.109,1.688,0.329,2.256
