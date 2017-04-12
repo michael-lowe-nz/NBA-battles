@@ -150,9 +150,8 @@ table {
 }
 
 .suggestion:hover {
-  color: #006BB6;
-  border-color: #006BB6;
-  background-color: white;
+  color: white;
+  background-color: #006BB6;
 }
 
 .suggestion p {

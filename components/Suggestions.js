@@ -5,7 +5,6 @@ import NBA from 'nba'
 
 module.exports = ({state, dispatch}) => {
   const suggestionLimit = 14
-  const shouldShow = state.form.suggestions.length > 0 ? "suggestions" : "hidden"
     if (state.form.name === null) {
       return null
     }
