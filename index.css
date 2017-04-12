@@ -1,11 +1,84 @@
+/** BASE STYLES **/
+
 main {
   text-align: center;
 }
 
 body {
-  font-family: 'Contrail One', "Helvetica";
+  font-family: "Helvetica Neue";
+  font-weight: 200;
   margin: 0;
+  background-color: #eee;
 }
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+input {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/** HEADER **/
+.header {
+  /*border-bottom: solid 1px #ED174C;*/
+  background-color: silver;
+  padding: 20px 0;
+  color: white;
+}
+
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}
+/** SEARCH **/
+
+.search {
+  color: #006BB6;
+  padding: 20px 0;
+}
+
+.searchInput:focus {
+  border: solid 1px #006BB6;
+}
+
+.formElement {
+  border: solid 1px white;
+  border-radius: 99em;
+  padding: 5px 20px;
+  margin: 0 10px;
+}
+
+.button {
+  background-color: white;
+  border: solid 1px;
+}
+
+.addPlayer {
+  color: #3FC380;
+  border-color: #3FC380;
+}
+
+.addPlayer:hover {
+  color: white;
+  background-color: #3FC380;
+}
+
+.clearPlayers {
+  color: red;
+  border: solid 1px red;
+}
+
+.clearPlayers:hover {
+  color: white;
+  background-color: red;
+}
+
+/** PLAYERS **/
 
 .players {
   display: flex;
@@ -15,22 +88,12 @@ body {
 }
 
 .player {
-  margin: 10px 50px;
+  margin: 20px 50px;
   padding: 5px 20px;
-  border: solid 1px #00BCD4;
+  border: solid 1px #006BB6;
   border-radius: 10px;
-}
-
-.stats {
-  border: solid 1px #00BCD4;
-  margin: 10px 0;
-  border-radius: 10px;
-}
-
-.header {
-  background-color: #00BCD4;
-  padding: 40px 0;
-  color: white;
+  background-color: white;
+  position: relative;
 }
 
 img {
@@ -38,13 +101,60 @@ img {
   margin: 0 auto;
 }
 
-.submit {
-  background-color: none;
-  border: solid 1px white;
-  border-radius: 99em;
-  padding: 0 10px;
-}
-
 .spinner {
   margin-top: 20vh;
+}
+
+.remove-button {
+  position: absolute;
+  left: -25px;
+  top: -25px;
+}
+
+.remove-button:hover .delete {
+  stroke: red;
+  transform: scale(20%);
+}
+
+#remove {
+  height: 20px;
+}
+
+/** STATS **/
+
+.stats {
+  border: solid 1px #006BB6;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: white;
+}
+
+table {
+  width: 100%;
+}
+
+/** SUGGESTIONS **/
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: white;
+}
+
+.suggestion {
+  margin-bottom: 2px;
+  font-size: 1em;
+}
+
+.suggestion:hover {
+  color: white;
+  background-color: #006BB6;
+}
+
+.suggestion p {
+  margin: 0 5px;
+  padding: 0;
 }
