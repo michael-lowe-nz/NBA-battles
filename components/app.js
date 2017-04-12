@@ -5,6 +5,7 @@ import Players from './Players'
 import Search from './Search'
 import Logo from '../svg/logo'
 import Suggestions from './Suggestions'
+import Comparison from './Comparison'
 
 import getPlayer from '../api/getPlayer'
 
@@ -21,6 +22,7 @@ module.exports = ({state, dispatch}) => {
         <MDSpinner size={80} className="spinner" />
         :
         <Players state={state} dispatch={dispatch}/>}
+      <Comparison />
     </div>
   )
 }

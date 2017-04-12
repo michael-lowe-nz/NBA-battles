@@ -58,20 +58,24 @@ input {
   border: solid 1px;
 }
 
-.button:hover {
-  background-color: #eee;
-  /*border-color: #3FC380;
-  color: #3FC380;*/
-}
-
 .addPlayer {
   color: #3FC380;
   border-color: #3FC380;
 }
 
+.addPlayer:hover {
+  color: white;
+  background-color: #3FC380;
+}
+
 .clearPlayers {
   color: red;
   border: solid 1px red;
+}
+
+.clearPlayers:hover {
+  color: white;
+  background-color: red;
 }
 
 /** PLAYERS **/
