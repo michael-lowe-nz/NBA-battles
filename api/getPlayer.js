@@ -1,4 +1,7 @@
 import NBA from 'nba'
+import request from 'superagent'
+
+// http://stats.nba.com/stats/commonplayerinfo?PlayerID=203077&SeasonType=Regular%20Season&LeagueID=00
 
 module.exports = (playerName, dispatch) => {
   const playerToAdd = NBA.findPlayer(playerName)
