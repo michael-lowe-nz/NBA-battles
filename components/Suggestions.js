@@ -4,15 +4,17 @@ import getPlayer from '../api/getPlayer'
 import NBA from 'nba'
 
 module.exports = ({state, dispatch}) => {
-  const customClass = state.form.suggestions.length > 0 ? "suggestions" : "hidden"
-    if (state.form.name && state.form.suggestions === 0) {
-      return noSuggestions()
+  const suggestionLimit = 14
+  const shouldShow = state.form.suggestions.length > 0 ? "suggestions" : "hidden"
+    if (state.form.name === null) {
+      return null
     }
     else {
       return (
-        <div className={customClass}>
-          {state.form.suggestions
-            .filter((suggestion, index) => index < 14)
+        <div className="suggestions">
+          {state.form.suggestions.length > 0 ?
+            state.form.suggestions
+            .filter((suggestion, index) => index < suggestionLimit)
             .map((thisSuggestion, index) => {
               function handleClickSuggestion () {
                 getPlayer(thisSuggestion.fullName, dispatch)
@@ -22,7 +24,10 @@ module.exports = ({state, dispatch}) => {
                   <p>{thisSuggestion.fullName}</p>
                 </div>
               )
-            })}
+            })
+            :
+            noSuggestions()
+          }
           </div>
         )
     }
