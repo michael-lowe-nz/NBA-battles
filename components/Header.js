@@ -6,7 +6,7 @@ module.exports = () => {
 
   return (
     <div className="header">
-      <Logo />
+      <img className="logo" src='../svg/logo.svg'/>
     </div>
   )
 }

@@ -15,6 +15,11 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}
+
 input {
   outline: none;
 }
@@ -31,10 +36,10 @@ input {
   color: white;
 }
 
-.clickable {
-  cursor: pointer;
-  cursor: hand;
+.logo {
+  width: 150px;
 }
+
 /** SEARCH **/
 
 .search {
@@ -81,13 +86,16 @@ input {
 /** PLAYERS **/
 
 .players {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 960px;
   margin: 0 auto;
 }
 
+.player-image img {
+  width: 80px;
+}
+
 .player {
+  display: flex;
   margin: 20px 50px;
   padding: 5px 20px;
   border: solid 1px #006BB6;
@@ -96,10 +104,10 @@ input {
   position: relative;
 }
 
-img {
+/*img {
   display: block;
   margin: 0 auto;
-}
+}*/
 
 .spinner {
   margin-top: 20vh;
@@ -123,10 +131,15 @@ img {
 /** STATS **/
 
 .stats {
-  border: solid 1px #006BB6;
-  margin: 10px 0;
-  border-radius: 10px;
-  background-color: white;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats p {
+  padding: 0;
+  margin: 0;
 }
 
 table {

@@ -11,7 +11,7 @@ module.exports = React.createClass({
     componentDidMount: () => console.log("I mounted!"),
     render: function() {
       return (
-        <h1>Comparison Visualisation to go here...</h1>
+        null
       )
     }
   })

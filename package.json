@@ -38,6 +38,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "budo": "^8.2.0",
+    "bulma": "^0.4.1",
     "clone": "^2.1.0",
     "deep-freeze": "0.0.1",
     "extend-tape": "^1.2.0",

@@ -11,21 +11,16 @@ module.exports = ({playerInfo, dispatch, index}) => {
         <div className="remove-button" onClick={removePlayer}>
           <DeleteButton/>
         </div>
-        <h2>{playerInfo.playerName}</h2>
-        <img src={"http://stats.nba.com/media/players/230x185/"+ playerInfo.playerId +".png"}></img>
+        <div className="player-image">
+          <img src={"http://stats.nba.com/media/players/230x185/"+ playerInfo.playerId +".png"}></img>
+        </div>
+        <div className="playerName">
+          <h2>{playerInfo.playerName}</h2>
+        </div>
         <div className="stats">
-          <table>
-            <tr>
-              <th>PPG.</th>
-              <th>RPG.</th>
-              <th>APG.</th>
-            </tr>
-            <tr>
-              <td>{playerInfo.pts}</td>
-              <td>{playerInfo.reb}</td>
-              <td>{playerInfo.ast}</td>
-            </tr>
-          </table>
+              <p>PPG {playerInfo.pts}</p>
+              <p>RPG{playerInfo.reb}</p>
+              <p>APG{playerInfo.ast}</p>
         </div>
       </div>
     )
