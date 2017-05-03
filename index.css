@@ -97,7 +97,7 @@ input {
 .player {
   display: flex;
   margin: 20px 50px;
-  padding: 5px 20px;
+  padding: 5px 20px 0pxs;
   border: solid 1px #006BB6;
   border-radius: 10px;
   background-color: white;
@@ -132,18 +132,25 @@ input {
 
 .stats {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .stats p {
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 table {
   width: 100%;
+}
+
+.statNumber {
+  font-size: 3.0em;
+  font-weight: bold;
 }
 
 /** SUGGESTIONS **/
