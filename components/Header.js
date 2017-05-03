@@ -1,12 +1,13 @@
 import React from 'react'
 
 import Logo from '../svg/logo'
+import Search from './Search'
 
-module.exports = () => {
+module.exports = ({state, dispatch}) => {
 
   return (
     <div className="header">
-      <img className="logo" src='../svg/logo.svg'/>
+      <Search state={state} dispatch={dispatch}/>
     </div>
   )
 }

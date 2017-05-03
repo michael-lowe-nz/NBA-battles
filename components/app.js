@@ -15,8 +15,7 @@ import MDSpinner from "react-md-spinner"
 module.exports = ({state, dispatch}) => {
   return (
     <div className="app">
-      <Header />
-      <Search state={state} dispatch={dispatch}/>
+      <Header state={state} dispatch={dispatch}/>
       <Suggestions state={state} dispatch={dispatch}/>
       {state.isLoading ?
         <MDSpinner size={80} className="spinner" />

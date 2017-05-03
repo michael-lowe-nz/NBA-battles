@@ -9,17 +9,18 @@ module.exports = ({playerInfo, dispatch, index}) => {
   }
   if (playerInfo) {
     return (
-      <div className="player">
-        <div className="remove-button" onClick={removePlayer}>
-          <DeleteButton />
+      <div className="container">
+        <div className="row">
+          <div className="three columns player">
+            <div className="player-image">
+              <img src={`http://stats.nba.com/media/players/230x185/${playerInfo.playerId}.png`}></img>
+            </div>
+            <div className="playerName">
+              <h2>{playerInfo.playerName}</h2>
+            </div>
+          </div>
+          <Stats playerInfo={playerInfo}/>
         </div>
-        <div className="player-image">
-          <img src={`http://stats.nba.com/media/players/230x185/${playerInfo.playerId}.png`}></img>
-        </div>
-        <div className="playerName">
-          <h2>{playerInfo.playerName}</h2>
-        </div>
-        <Stats playerInfo={playerInfo}/>
       </div>
     )
   }
