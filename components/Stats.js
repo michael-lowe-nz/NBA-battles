@@ -1,7 +1,5 @@
 import React from 'react'
 
-import AnimatedNum from './AnimatedNum'
-
 module.exports = ({playerInfo}) => {
   const { pts, reb, ast } = playerInfo
   console.log(playerInfo)
@@ -9,7 +7,7 @@ module.exports = ({playerInfo}) => {
     <div className="stats">
       <div className="points statCol">
         <h3>PPG</h3>
-        <AnimatedNum/>
+        <h2 className="statNumber">{pts}</h2>
       </div>
       <div className="rebounds statCol">
         <h3>RPG</h3>

@@ -98,6 +98,7 @@ input {
 .statNumber {
   font-size: 5.2em;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 .row {
