@@ -9,7 +9,6 @@ module.exports = ({state, dispatch}) => {
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: e.target.value})
     const suggestions = NBA.searchPlayers(e.target.value)
     dispatch({type: 'ADD_SUGGESTIONS', payload: suggestions})
-    console.log(state.form.name)
   }
   function addPlayer (e) {
     e.preventDefault()
@@ -29,7 +28,6 @@ module.exports = ({state, dispatch}) => {
           e.preventDefault()
           dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: e.target.value})
           const suggestions = state.form.name ? NBA.searchPlayers(state.form.name) : []
-          console.log(state.form.name)
           dispatch({type: 'ADD_SUGGESTIONS', payload: suggestions})
           }}></input>
         <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>

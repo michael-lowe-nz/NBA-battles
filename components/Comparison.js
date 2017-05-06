@@ -7,8 +7,6 @@ const sampleData = [
 ]
 
 module.exports = React.createClass({
-    componentWillMount: () => console.log("I will mount..."),
-    componentDidMount: () => console.log("I mounted!"),
     render: function() {
       return (
         null
