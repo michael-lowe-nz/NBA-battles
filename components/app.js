@@ -16,7 +16,6 @@ module.exports = ({state, dispatch}) => {
   return (
     <div className="app">
       <Header state={state} dispatch={dispatch}/>
-      <Suggestions state={state} dispatch={dispatch}/>
       {state.isLoading ?
         <MDSpinner size={80} className="spinner" />
         :
