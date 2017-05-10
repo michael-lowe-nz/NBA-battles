@@ -1,5 +1,6 @@
 import React from 'react'
 import NBA from 'nba'
+import Autocomplete from 'react-autocomplete'
 
 import getPlayer from '../api/getPlayer'
 
@@ -10,9 +11,8 @@ module.exports = ({state, dispatch}) => {
     const suggestions = NBA.searchPlayers(e.target.value)
     dispatch({type: 'ADD_SUGGESTIONS', payload: suggestions})
   }
-  function addPlayer (e) {
-    e.preventDefault()
-    getPlayer(state.form.name, dispatch)
+  function addPlayer (playerName) {
+    getPlayer(playerName.toLowerCase(), dispatch)
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
     dispatch({type: 'CLEAR_SUGGESTIONS'})
   }
@@ -29,6 +29,16 @@ module.exports = ({state, dispatch}) => {
         <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>
         <input className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers} ></input>
       </form>
+      <Autocomplete
+        items={state.form.suggestions}
+        value={state.form.name}
+        onChange={handleNameChange}
+        onSelect={value =>{
+          addPlayer(value)
+        }}
+        getItemValue={(item)=>item.fullName}
+        renderItem={(suggestion)=><div>{suggestion.fullName}</div>}
+        />
     </div>
   )
 }
