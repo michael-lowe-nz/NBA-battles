@@ -11,7 +11,7 @@ var initialState = {
   currentPage: 'index',
   players: [],
   form: {
-    name: null,
+    name: "",
     suggestions: [],
   }
 }

@@ -10,6 +10,7 @@ module.exports = (state, action) => {
       return newState
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload
+      console.log("form.name ", newState.form.name)
       return newState
     case 'TOGGLE_PLAYER_LOADING':
       newState.isLoading = !newState.isLoading
