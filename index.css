@@ -19,6 +19,17 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+form {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+input {
+  margin: 0 5px;
+  height: 40px;
+}
+
 .clickable {
   cursor: pointer;
   cursor: hand;
@@ -39,14 +50,6 @@ input {
 
 /** SEARCH **/
 
-/*.search {
-  color: #006BB6;
-  padding: 20px 0;
-}*/
-/*
-.searchInput:focus, button:hover {
-  border: solid 1px #006BB6;
-}*/
 
 /** PLAYERS **/
 .player {
@@ -120,12 +123,12 @@ input {
   justify-content: center;
   margin: 0 auto;
   padding: 5px;
-  background-color: white;
 }
 
 .suggestion {
   margin-bottom: 2px;
   font-size: 1em;
+  background-color: white;
 }
 
 /*.suggestion:hover {
