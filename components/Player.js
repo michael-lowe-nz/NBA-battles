@@ -2,26 +2,23 @@ import React from 'react'
 
 import DeleteButton from '../svg/delete-button'
 import Stats from './Stats'
+import PlayerImage from './PlayerImage'
 
 module.exports = ({playerInfo, dispatch, index}) => {
   function removePlayer () {
     dispatch({type: 'REMOVE_PLAYER', payload: index})
   }
+  console.log(playerInfo)
   if (playerInfo) {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="three columns player">
-            <div className="player-image">
-              <img src={`http://stats.nba.com/media/players/230x185/${playerInfo.playerId}.png`}></img>
-            </div>
-            <div className="playerName">
-              <h2>{playerInfo.playerName}</h2>
-            </div>
-          </div>
-          <Stats playerInfo={playerInfo}/>
-        </div>
-      </div>
+      <tr>
+        <td>
+          {playerInfo.playerName}
+        </td>
+        <td>{playerInfo.pts}</td>
+        <td>{playerInfo.ast}</td>
+        <td>{playerInfo.reb}</td>
+      </tr>
     )
   }
   return null

@@ -6,13 +6,21 @@ import Player from './Player'
 module.exports = ({state, dispatch}) => {
   if (state.players.length > 0) {
     return (
-      <div className="players">
-        <ReactCSSTransitionGroup className="players" transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Points Per Game</th>
+            <th>Assists Per Game</th>
+            <th>Rebounds Per Game</th>
+          </tr>
+        </thead>
+        <tbody>
           {state.players.map(function (player, index) {
             return (<Player playerInfo={player} dispatch={dispatch} key={index} index={index}/>)
           })}
-        </ReactCSSTransitionGroup>
-      </div>
+        </tbody>
+      </table>
     )
   }
   return null
