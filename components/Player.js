@@ -20,6 +20,7 @@ module.exports = ({playerInfo, dispatch, index}) => {
         <td>{playerInfo.reb}</td>
         <td>{playerInfo.fgPct}</td>
         <td>{playerInfo.fg3Pct}</td>
+        <td>{playerInfo.ftPct}</td>
         <td>{playerInfo.stl}</td>
         <td>{playerInfo.blk}</td>
       </tr>

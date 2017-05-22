@@ -32,11 +32,11 @@ module.exports = ({state, dispatch}) => {
           items={state.form.suggestions}
           value={state.form.name}
           onChange={handleNameChange}
-          onSelect={value =>{
-            addPlayer(value)
-          }}
+          onSelect={
+            addPlayer
+          }
           getItemValue={(item)=>item.fullName}
-          renderItem={(suggestion)=><div>{suggestion.fullName}</div>}
+          renderItem={(suggestion)=><div className="clickable suggestion">{suggestion.fullName}</div>}
           />
         <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>
         <input className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers} ></input>

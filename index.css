@@ -136,10 +136,10 @@ table {
   background-color: white;
 }
 
-/*.suggestion:hover {
+.suggestion:hover {
   color: white;
-  background-color: #006BB6;
-}*/
+  background-color: gray;
+}
 
 .suggestion p {
   margin: 0 5px;

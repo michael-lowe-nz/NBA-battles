@@ -14,7 +14,7 @@ module.exports = ({state, dispatch}) => {
             <th>APG</th>
             <th>RPG</th>
             <th>FG%</th>
-            <th>3PM%</th>
+            <th>3P%</th>
             <th>FT%</th>
             <th>STL</th>
             <th>BLK</th>
@@ -22,7 +22,7 @@ module.exports = ({state, dispatch}) => {
         </thead>
         <tbody>
           {state.players.map(function (player, index) {
-            return (<Player playerInfo={player} dispatch={dispatch} key={index} index={index}/>)
+            return (<Player playerInfo={player} key={player.playerId} index={index}/>)
           })}
         </tbody>
       </table>
