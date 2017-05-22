@@ -9,10 +9,15 @@ module.exports = ({state, dispatch}) => {
       <table className="table">
         <thead>
           <tr>
-            <th>Player Name</th>
-            <th>Points Per Game</th>
-            <th>Assists Per Game</th>
-            <th>Rebounds Per Game</th>
+            <th>Player</th>
+            <th>PPG</th>
+            <th>APG</th>
+            <th>RPG</th>
+            <th>FG%</th>
+            <th>3PM%</th>
+            <th>FT%</th>
+            <th>STL</th>
+            <th>BLK</th>
           </tr>
         </thead>
         <tbody>
