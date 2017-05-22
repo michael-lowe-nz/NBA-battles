@@ -2,6 +2,7 @@ import React from 'react'
 import NBA from 'nba'
 import Autocomplete from 'react-autocomplete'
 
+import Autosuggest from './Autosuggest'
 import {getPlayers} from '../lib/utils'
 
 import getPlayer from '../api/getPlayer'
@@ -27,20 +28,19 @@ module.exports = ({state, dispatch}) => {
   }
   return (
     <div className="search">
-      <form>
-        <Autocomplete
-          items={state.form.suggestions}
-          value={state.form.name}
-          onChange={handleNameChange}
-          onSelect={
-            addPlayer
-          }
-          getItemValue={(item)=>item.fullName}
-          renderItem={(suggestion)=><div className="clickable suggestion">{suggestion.fullName}</div>}
-          />
-        <input className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer} ></input>
-        <input className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers} ></input>
-      </form>
+      <Autocomplete
+        items={state.form.suggestions}
+        value={state.form.name}
+        onChange={handleNameChange}
+        onSelect={
+          addPlayer
+        }
+        getItemValue={(item)=>item.fullName}
+        renderItem={(suggestion)=><div className="clickable suggestion">{suggestion.fullName}</div>}
+        />
+      <button className="formElement button addPlayer clickable" type="submit" value="Add Player" onClick={addPlayer}>Add Player</button>
+      <button className="formElement button clearPlayers clickable" type="submit" value="Clear" onClick={clearPlayers}>Clear</button>
+      <Autosuggest />
     </div>
   )
 }

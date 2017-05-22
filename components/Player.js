@@ -12,8 +12,9 @@ module.exports = ({playerInfo, dispatch, index}) => {
   if (playerInfo) {
     return (
       <tr>
-        <td>
+        <td className="playerName">
           {playerInfo.playerName}
+          <PlayerImage playerId={playerInfo.playerId}/>
         </td>
         <td>{playerInfo.pts}</td>
         <td>{playerInfo.ast}</td>

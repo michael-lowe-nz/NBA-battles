@@ -53,6 +53,18 @@ table {
   margin: 0 auto;
 }
 
+table th {
+  text-align: center;
+}
+
+table tr {
+  text-align: center;
+}
+
+.table {
+  text-align: center;
+}
+
 /** SEARCH **/
 
 
@@ -64,6 +76,7 @@ table {
 }
 
 .player-image {
+  float: left;
   width: 40px;
   height: 40px;
   position: relative;
@@ -75,12 +88,11 @@ table {
   margin: 0 auto;
   height: 100%;
   width: auto;
-  position: absolute;
-  left: -10px;
+  /*position: absolute;*/
 }
 
-.playerName h2 {
-  font-size: 1.7em;
+.playerName {
+  text-transform: capitalize;
 }
 
 .spinner {
