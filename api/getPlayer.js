@@ -14,8 +14,5 @@ module.exports = (playerName, dispatch) => {
         dispatch({type: 'RECEIVE_PLAYER_INFO', payload: playerInfo})
         dispatch({type: "TOGGLE_PLAYER_LOADING"})
       })
-      .catch(function (error) {
-        console.log('Error:', error)
-      })
   }
 }
