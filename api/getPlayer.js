@@ -11,7 +11,6 @@ module.exports = (playerName, dispatch) => {
       .then(function (response) {
         const playerInfo = response.careerTotalsRegularSeason[0]
         playerInfo.playerName = playerName
-        console.log('Playerinfo:', response)
         dispatch({type: 'RECEIVE_PLAYER_INFO', payload: playerInfo})
         dispatch({type: "TOGGLE_PLAYER_LOADING"})
       })

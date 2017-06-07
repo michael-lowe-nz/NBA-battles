@@ -2,7 +2,6 @@ import React from 'react'
 
 module.exports = ({playerInfo}) => {
   const { pts, reb, ast } = playerInfo
-  console.log(playerInfo)
   return (
     <div className="stats">
       <div className="points statCol">

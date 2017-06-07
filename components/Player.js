@@ -4,28 +4,23 @@ import DeleteButton from '../svg/delete-button'
 import Stats from './Stats'
 import PlayerImage from './PlayerImage'
 
-module.exports = ({playerInfo, dispatch, index}) => {
-  function removePlayer () {
-    dispatch({type: 'REMOVE_PLAYER', payload: index})
-  }
-  console.log(playerInfo)
-  if (playerInfo) {
-    return (
-      <tr>
-        <td className="playerName">
-          {playerInfo.playerName}
-          <PlayerImage playerId={playerInfo.playerId}/>
-        </td>
-        <td>{playerInfo.pts}</td>
-        <td>{playerInfo.ast}</td>
-        <td>{playerInfo.reb}</td>
-        <td>{playerInfo.fgPct}</td>
-        <td>{playerInfo.fg3Pct}</td>
-        <td>{playerInfo.ftPct}</td>
-        <td>{playerInfo.stl}</td>
-        <td>{playerInfo.blk}</td>
-      </tr>
-    )
-  }
-  return null
+import Loading from "react-md-spinner"
+
+module.exports = ({ playerInfo }) => {
+  return (
+    <tr>
+      <td className="playerName">
+        {playerInfo.playerName}
+        <PlayerImage playerId={playerInfo.playerId}/>
+      </td>
+      <td>{playerInfo.pts}</td>
+      <td>{playerInfo.ast}</td>
+      <td>{playerInfo.reb}</td>
+      <td>{playerInfo.fgPct}</td>
+      <td>{playerInfo.fg3Pct}</td>
+      <td>{playerInfo.ftPct}</td>
+      <td>{playerInfo.stl}</td>
+      <td>{playerInfo.blk}</td>
+    </tr>
+  )
 }
