@@ -28,51 +28,33 @@ test('Reducer can change the currentPage in the state', t => {
   t.end()
 })
 
-test('Reducer can add a players info to the state', t => {
+test.skip('Reducer can hydrate a players in state players array', t => {
   const initialState = {
     currentPage: '/index',
-    players: []
+    players: [
+      {
+        name: 'Stephen Curry',
+        playerId: '01'
+      }
+    ]
   }
   freeze(initialState)
   const expected = {
     currentPage : '/index',
     players : [{
       name: 'Stephen Curry',
-      team: 'Golden State Warriors',
-      ppg: 25.4,
-      apg: 6.1,
-      rpg: 2.3
+      playerId: '01',
+      ppg: 25
     }]
   }
-  const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
+  const actual = reducer(initialState, {type: 'HYRDATE_PLAYER', payload: {
     name: 'Stephen Curry',
+    playerId: '01',
     team: 'Golden State Warriors',
-    ppg: 25.4,
-    apg: 6.1,
-    rpg: 2.3
+    ppg: 25
   }}
   )
   t.deepEqual(actual, expected, 'Reducer adds the new players info correctly')
-  t.end()
-})
-
-test('Adding a second players info goes into the second player in the state correctly', t => {
-  const initialState = {
-    currentPage: '/index',
-    players: [{name: 'Stephen Curry', team: 'Golden State Warriors'}]
-  }
-  freeze(initialState)
-  const expected = {
-    currentPage: '/index',
-    players: [
-      {name: 'Stephen Curry', team: 'Golden State Warriors'},
-      {name: 'Lebron James', team: 'Cleveland Cavaliers'}]
-  }
-  const actual = reducer(initialState, {type: 'RECEIVE_PLAYER_INFO', payload: {
-    name: 'Lebron James', team: 'Cleveland Cavaliers'
-  }}
-  )
-  t.deepEqual(actual, expected, 'Reducer adds the second players info correctly')
   t.end()
 })
 
@@ -90,27 +72,6 @@ test('handleNameChange can update the form.name in the state correctly', t => {
   }
   const actual = reducer(initialState, {type: 'HANDLE_FORM_NAME_CHANGE', payload: "Kevin Durant"})
   t.deepEqual(actual, expected, 'Reducer adds Kevin Durant to state.form.name in the state')
-  t.end()
-})
-
-test('TOGGLE_PLAYER_LOADING can change the loading property correctly', t => {
-  const initialState = {
-    form: {
-      name: null
-    },
-    players : [],
-    isLoading: false
-  }
-  freeze(initialState)
-  const expected = {
-    form: {
-      name: null
-    },
-    players : [],
-    isLoading: true
-  }
-  const actual = reducer(initialState, {type: 'TOGGLE_PLAYER_LOADING'})
-  t.deepEqual(actual, expected, 'Reducer toggles player loading value correctly')
   t.end()
 })
 

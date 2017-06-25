@@ -17,6 +17,9 @@ module.exports = (state, action) => {
       newPlayer.loading = false
       newState.players = newState.players.map(player => player.playerId === newPlayer.playerId ? newPlayer : player)
       return newState
+    case 'UPDATE_PLAYER_ARRAY':
+      newState.players = payload
+      return newState
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload
       return newState
