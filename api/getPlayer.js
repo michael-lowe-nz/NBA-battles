@@ -4,7 +4,6 @@ import request from 'superagent'
 module.exports = (playerName, dispatch) => {
   const playerToAdd = NBA.findPlayer(playerName)
   if(playerToAdd) {
-    dispatch({type: "TOGGLE_PLAYER_LOADING"})
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
     dispatch({type: 'CLEAR_SUGGESTIONS'})
     NBA.stats.playerProfile({ PlayerID: playerToAdd.playerId})

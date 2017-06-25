@@ -5,6 +5,11 @@ module.exports = (state, action) => {
     case 'CHANGE_PAGE':
       newState.currentPage = payload
       return newState
+    case 'INITIATE_PLAYER':
+      newState.players.push({
+        playerId: payload.playerId,
+        loading: true
+      })
     case 'RECEIVE_PLAYER_INFO':
       newState.players.push(payload)
       return newState
