@@ -1,5 +1,6 @@
 import React from 'react'
 
+import PlayerLoading from './PlayerLoading'
 import DeleteButton from '../svg/delete-button'
 import Stats from './Stats'
 import PlayerImage from './PlayerImage'
@@ -7,14 +8,8 @@ import PlayerImage from './PlayerImage'
 import Loading from "react-md-spinner"
 
 module.exports = ({ playerInfo }) => {
-  if (playerInfo.loading === true) {
-    return (
-      <tr>
-        <td><div className="animated-background"></div></td>
-        <td><div className="animated-background"></div></td>
-        <td><div className="animated-background"></div></td>
-      </tr>
-    )
+  if (playerInfo.loading) {
+    return <PlayerLoading />
   }
   return (
     <tr>
