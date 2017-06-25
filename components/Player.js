@@ -8,7 +8,13 @@ import Loading from "react-md-spinner"
 
 module.exports = ({ playerInfo }) => {
   if (playerInfo.loading === true) {
-    return <tr><td><Loading /></td></tr>
+    return (
+      <tr>
+        <td><div className="animated-background"></div></td>
+        <td><div className="animated-background"></div></td>
+        <td><div className="animated-background"></div></td>
+      </tr>
+    )
   }
   return (
     <tr>
