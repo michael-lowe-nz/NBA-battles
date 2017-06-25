@@ -5,14 +5,23 @@ module.exports = (state, action) => {
     case 'CHANGE_PAGE':
       newState.currentPage = payload
       return newState
-    case 'RECEIVE_PLAYER_INFO':
-      newState.players.push(payload)
+    case 'INITIATE_PLAYER':
+      newState.players.push({
+        playerId: payload.playerId,
+        playerName: payload.playerName,
+        loading: true
+      })
+      return newState
+    case 'HYDRATE_PLAYER':
+      const newPlayer  = payload
+      newPlayer.loading = false
+      newState.players = newState.players.map(player => player.playerId === newPlayer.playerId ? newPlayer : player)
+      return newState
+    case 'UPDATE_PLAYER_ARRAY':
+      newState.players = payload
       return newState
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload
-      return newState
-    case 'TOGGLE_PLAYER_LOADING':
-      newState.isLoading = !newState.isLoading
       return newState
     case 'ADD_SUGGESTIONS':
       newState.form.suggestions = payload
