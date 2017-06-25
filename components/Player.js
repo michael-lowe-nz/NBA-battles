@@ -9,7 +9,8 @@ import Loading from "react-md-spinner"
 
 module.exports = ({ playerInfo }) => {
   if (playerInfo.loading) {
-    return <PlayerLoading />
+    console.log("playerInfo", playerInfo);
+    return <PlayerLoading playerName={playerInfo.playerName}/>
   }
   return (
     <tr>

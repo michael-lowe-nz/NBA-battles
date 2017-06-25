@@ -16,9 +16,11 @@ module.exports = ({state, dispatch}) => {
     dispatch({type: 'ADD_SUGGESTIONS', payload: suggestions})
   }
   function addPlayer (playerName) {
-    getPlayer(playerName.toLowerCase(), dispatch)
-    dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
-    dispatch({type: 'CLEAR_SUGGESTIONS'})
+    if (state.form.name) {
+      getPlayer(playerName.toLowerCase(), dispatch)
+      dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
+      dispatch({type: 'CLEAR_SUGGESTIONS'})
+    }
   }
   function clearPlayers (e) {
     e.preventDefault()

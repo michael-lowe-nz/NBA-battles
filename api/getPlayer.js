@@ -3,9 +3,11 @@ import request from 'superagent'
 
 module.exports = (playerName, dispatch) => {
   const playerToAdd = NBA.findPlayer(playerName)
+  console.log('Playertoadd:', playerToAdd)
   if(playerToAdd) {
     dispatch({type: 'INITIATE_PLAYER', payload: {
-      playerId: playerToAdd.playerId
+      playerId: playerToAdd.playerId,
+      playerName: playerToAdd.fullName
     }})
     dispatch({type: 'HANDLE_FORM_NAME_CHANGE', payload: ""})
     dispatch({type: 'CLEAR_SUGGESTIONS'})

@@ -20,12 +20,7 @@ module.exports = ({state, dispatch}) => {
         </tr>
       </thead>
       <tbody>
-        {
-          state.players.length ?
-          state.players.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)
-          :
-          <tr><td>No players...</td></tr>
-        }
+        {state.players.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)}
       </tbody>
     </table>
   )

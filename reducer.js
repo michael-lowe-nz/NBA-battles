@@ -8,6 +8,7 @@ module.exports = (state, action) => {
     case 'INITIATE_PLAYER':
       newState.players.push({
         playerId: payload.playerId,
+        playerName: payload.playerName,
         loading: true
       })
       return newState
