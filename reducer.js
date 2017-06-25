@@ -10,8 +10,23 @@ module.exports = (state, action) => {
         playerId: payload.playerId,
         loading: true
       })
-    case 'RECEIVE_PLAYER_INFO':
-      newState.players.push(payload)
+      console.log('Player after init: ', newState.players)
+      return newState
+    case 'HYDRATE_PLAYER':
+      const newPlayer  = payload
+      console.log('newPlayer: ', newPlayer)
+      newPlayer.loading = false
+      newState.players =  newState.players
+        .map(player => {
+          console.log('player in map: ', player)
+          console.log('player.playerId === newPlayer.playerId',player.playerId === newPlayer.playerId)
+          if (player.playerId === newPlayer.playerId) {
+            console.log('Match!')
+            return newPlayer
+          } else {
+            return player
+          }
+        })
       return newState
     case 'HANDLE_FORM_NAME_CHANGE':
       newState.form.name = payload

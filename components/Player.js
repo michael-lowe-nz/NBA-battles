@@ -7,6 +7,9 @@ import PlayerImage from './PlayerImage'
 import Loading from "react-md-spinner"
 
 module.exports = ({ playerInfo }) => {
+  if (playerInfo.loading === true) {
+    return <tr><td><Loading /></td></tr>
+  }
   return (
     <tr>
       <td className="playerName">
