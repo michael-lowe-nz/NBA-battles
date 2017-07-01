@@ -6,12 +6,14 @@ import PlayerLoading from './PlayerLoading'
 import TableHeaders from './TableHeaders'
 
 module.exports = ({state, dispatch}) => {
+  const sortInfo = state.columns.find(column => column.sorted)
+  const playerSorted = state.players.sort((a, b) => a[sortInfo.columnName])
+  const playersRender = state.players.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)
   return (
     <table className="table">
       <TableHeaders state={state} dispatch={dispatch}/>
       <tbody>
-        {state.players.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)}
-        <PlayerLoading playerName="Testing guy"/>
+        {playersRender}
       </tbody>
     </table>
   )

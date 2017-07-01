@@ -2,8 +2,20 @@ module.exports = (state, action) => {
   const newState = require('clone')(state)
   const {type, payload} = action
   switch (type) {
-    case 'CHANGE_PAGE':
-      newState.currentPage = payload
+
+    case 'UPDATE_COLUMN':
+      newState.columns.map(column => {
+        if (column.columnName === payload.columnName) {
+          const updatedColumn = column
+          updatedColumn.sorted = true
+          updatedColumn.isDescending = payload.isDescending
+          return updatedColumn
+        } else {
+          const updatedColumn = column
+          updatedColumn.sorted = false
+          return column
+        }
+      })
       return newState
     case 'INITIATE_PLAYER':
       newState.players.push({
