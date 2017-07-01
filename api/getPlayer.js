@@ -3,7 +3,6 @@ import request from 'superagent'
 
 module.exports = (playerName, dispatch) => {
   const playerToAdd = NBA.findPlayer(playerName)
-  console.log('Playertoadd:', playerToAdd)
   if(playerToAdd) {
     dispatch({type: 'INITIATE_PLAYER', payload: {
       playerId: playerToAdd.playerId,
