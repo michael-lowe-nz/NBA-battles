@@ -52,6 +52,7 @@ table {
 
 table th {
   text-align: center;
+  cursor: pointer;
 }
 
 table tr {
@@ -60,6 +61,11 @@ table tr {
 
 .table {
   text-align: center;
+}
+
+#sortedCol {
+  background-color: grey;
+  color: white;
 }
 
 /** SEARCH **/
@@ -179,4 +185,12 @@ table tr {
   background-size: 800px 104px;
   height: 30px;
   position: relative;
+}
+
+.fa-arrow-circle-o-up {
+  color: red;
+}
+
+.fa-arrow-circle-o-down {
+  color: green;
 }
