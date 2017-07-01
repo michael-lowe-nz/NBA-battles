@@ -13,7 +13,7 @@ var initialState = {
     {
       columnName: "Player",
       statName: "fullName",
-      sorted: true,
+      sorted: false,
       isDescending: false,
     },
     {

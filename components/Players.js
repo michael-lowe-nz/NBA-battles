@@ -6,9 +6,16 @@ import PlayerLoading from './PlayerLoading'
 import TableHeaders from './TableHeaders'
 
 module.exports = ({state, dispatch}) => {
-  const sortInfo = state.columns.find(column => column.sorted)
-  const playerSorted = state.players.sort((a, b) => a[sortInfo.columnName])
-  const playersRender = state.players.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)
+  const sortObj = state.columns.find(column => column.sorted === true)
+  let playersArray = state.players
+  if (sortObj) {
+    if (sortObj.isDescending) {
+      playersArray = playersArray.sort((a, b) => b[sortObj.statName] - a[sortObj.statName])
+    } else {
+      playersArray = playersArray.sort((a, b) => a[sortObj.statName] - b[sortObj.statName])
+    }
+  }
+  const playersRender = playersArray.map((player, index) => <Player key={player.playerId} playerInfo={player}/>)
   return (
     <table className="table">
       <TableHeaders state={state} dispatch={dispatch}/>
