@@ -12,7 +12,7 @@ var initialState = {
   columns: [
     {
       columnName: "Player",
-      statName: "fullName",
+      statName: "playerName",
       sorted: false,
       isDescending: false,
     },

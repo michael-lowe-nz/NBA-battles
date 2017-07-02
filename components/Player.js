@@ -11,6 +11,7 @@ module.exports = ({ playerInfo }) => {
   if (playerInfo.loading) {
     return <PlayerLoading playerName={playerInfo.playerName}/>
   }
+  console.log('player', playerInfo)
   return (
     <tr>
       <td className="playerName">
