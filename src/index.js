@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Router, Route, browserHistory} from 'react-router'
+require('./index.scss')
+
 
 import App from './components/app'
 import reducer from './reducer'
